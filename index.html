@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lorenz Serio Pacsa — Executive Assistant, Administrative Support and Virtual Assistant portfolio. Explore professional experience, skills and sample projects.">
+  <meta name="theme-color" content="#202124">
+  <title>Lorenz Serio Pacsa | Executive Assistant Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202124;
+      --ink-2: #34363a;
+      --muted: #6b7078;
+      --line: #e1e3e6;
+      --surface: #ffffff;
+      --surface-2: #f4f5f6;
+      --surface-3: #fafafa;
+      --accent: #555b64;
+      --max: 1160px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(25, 28, 32, .08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { font-family: "DM Sans", sans-serif; color: var(--ink); background: var(--surface-3); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    .container { width: min(91%, var(--max)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: Manrope, sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: .09em; white-space: nowrap; }
+    .brand span { color: #858b93; }
+    .nav-links { display: flex; align-items: center; gap: 25px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .86rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--ink); }
+    .nav-cta { padding: 10px 16px; border-radius: 999px; background: var(--ink); color: white !important; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 10px; width: 42px; height: 42px; font-size: 1.25rem; cursor: pointer; }
+    .hero { padding: 96px 0 86px; background: linear-gradient(120deg, #f5f6f7 0%, #eceef0 52%, #f8f8f8 100%); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .8fr; align-items: center; gap: 70px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: .75rem; letter-spacing: .17em; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; }
+    .eyebrow:before { content: ""; width: 28px; height: 1px; background: var(--muted); }
+    h1, h2, h3 { font-family: Manrope, sans-serif; line-height: 1.18; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); letter-spacing: -.055em; max-width: 720px; margin-bottom: 22px; }
+    h1 span { color: #737982; }
+    .hero-copy { max-width: 650px; color: #5f646c; font-size: 1.05rem; margin-bottom: 30px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 13px 19px; border-radius: 9px; font-size: .88rem; font-weight: 700; border: 1px solid transparent; transition: transform .2s, background .2s, border .2s; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark { color: white; background: var(--ink); }
+    .btn-dark:hover { background: #3b3e43; }
+    .btn-light { background: white; color: var(--ink); border-color: #cfd2d6; }
+    .btn-light:hover { background: #f2f3f4; }
+    .portrait-card { background: white; padding: 34px; border: 1px solid #e1e3e6; border-radius: 26px; box-shadow: var(--shadow); text-align: center; max-width: 360px; justify-self: end; width: 100%; }
+    .portrait {
+  width: 178px;
+  height: 178px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  border: 8px solid #f0f1f2;
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+    .portrait-note { font-size: .72rem; color: #858b93; margin-top: 7px; }
+    .portrait-card h2 { font-size: 1.25rem; margin-bottom: 5px; }
+    .portrait-card p { color: var(--muted); font-size: .86rem; }
+    .mini-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+    .mini-tags span { padding: 6px 10px; border-radius: 999px; background: var(--surface-2); color: #555b64; font-size: .7rem; font-weight: 700; }
+    section { padding: 86px 0; }
+    .section-head { max-width: 700px; margin: 0 auto 42px; text-align: center; }
+    .section-kicker { text-transform: uppercase; letter-spacing: .16em; color: #858b93; font-size: .72rem; font-weight: 800; margin-bottom: 10px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; margin-bottom: 12px; }
+    .section-head p { color: var(--muted); font-size: .96rem; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 42px; align-items: start; }
+    .about-copy h3 { font-size: 1.5rem; margin-bottom: 16px; }
+    .about-copy p { color: var(--muted); margin-bottom: 14px; }
+    .principle { padding: 28px; background: var(--surface-2); border: 1px solid var(--line); border-left: 4px solid var(--ink); border-radius: 14px; }
+    .principle h3 { font-size: 1.1rem; margin-bottom: 12px; }
+    .principle p { color: var(--muted); font-size: .92rem; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+    .fact { padding: 16px; background: white; border: 1px solid var(--line); border-radius: 12px; }
+    .fact strong { display: block; font: 800 1.35rem Manrope, sans-serif; }
+    .fact span { color: var(--muted); font-size: .76rem; }
+    .soft-section { background: var(--surface-2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .skill-card { padding: 25px; background: white; border: 1px solid var(--line); border-radius: 15px; transition: transform .2s, box-shadow .2s; }
+    .skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .skill-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: #eceef0; font-size: 1.2rem; margin-bottom: 17px; }
+    .skill-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+    .skill-card p { color: var(--muted); font-size: .85rem; }
+    .timeline { max-width: 850px; margin: auto; }
+    .timeline-item { position: relative; padding: 0 0 32px 30px; border-left: 2px solid #d5d8dc; }
+    .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+    .timeline-item:before { content: ""; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 5px #eceef0; }
+    .timeline-date { color: #777d86; font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .timeline-item h3 { font-size: 1.2rem; margin: 5px 0; }
+    .timeline-company { font-weight: 700; font-size: .9rem; color: #555b64; }
+    .timeline-item p { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .project-card { background: white; border: 1px solid var(--line); border-radius: 17px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .project-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #e7e9eb; border-bottom: 1px solid var(--line); }
+    .project-content { padding: 23px; }
+    .project-number { color: #858b93; font-size: .7rem; letter-spacing: .14em; font-weight: 800; }
+    .project-content h3 { font-size: 1.2rem; margin: 5px 0 9px; }
+    .project-content p { color: var(--muted); font-size: .88rem; min-height: 48px; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 7px; margin: 15px 0 18px; }
+    .project-meta span { background: var(--surface-2); color: #5d636b; border-radius: 999px; padding: 5px 9px; font-size: .68rem; font-weight: 700; }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+    .project-actions a { display: inline-flex; align-items: center; justify-content: center; padding: 9px 12px; border: 1px solid #cfd2d6; border-radius: 8px; font-size: .76rem; font-weight: 700; }
+    .project-actions a.primary-link { background: var(--ink); color: white; border-color: var(--ink); }
+    .project-actions a:hover { background: #eceef0; color: var(--ink); border-color: #eceef0; }
+    .project-actions a.primary-link:hover { background: #44484e; color: white; }
+    .disclaimer { margin-top: 24px; padding: 15px 17px; background: #f0f1f2; border: 1px solid #dfe1e4; border-radius: 10px; color: #626871; font-size: .78rem; }
+    .tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 11px; }
+    .tool { background: white; border: 1px solid var(--line); border-radius: 9px; padding: 11px 16px; color: #4f555d; font-size: .85rem; font-weight: 700; }
+    .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .education-card { background: white; border: 1px solid var(--line); border-radius: 15px; padding: 25px; }
+    .education-card h3 { font-size: 1.08rem; margin-bottom: 7px; }
+    .education-card p { color: var(--muted); font-size: .88rem; }
+    .cert-list { columns: 2; margin: 12px 0 0 18px; color: var(--muted); font-size: .85rem; }
+    .contact { background: var(--ink); color: white; text-align: center; }
+    .contact .section-kicker { color: #bfc3c9; }
+    .contact .section-head p { color: #c2c6cc; }
+    .contact .section-head h2 { color: white; }
+    .contact-details { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .contact-details a { padding: 11px 17px; border: 1px solid #676c73; border-radius: 9px; font-size: .85rem; font-weight: 700; }
+    .contact-details a:hover { background: white; color: var(--ink); }
+    .contact-hint { margin-top: 18px; color: #aeb3ba; font-size: .75rem; }
+    footer { padding: 24px 0; background: #17181a; color: #aeb3ba; text-align: center; font-size: .76rem; }
+    .back-top { position: fixed; bottom: 22px; right: 22px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: white; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 15px; }
+      .hero-grid { gap: 35px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; left: 0; right: 0; top: 75px; padding: 20px 5%; background: white; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 11px 0; }
+      .nav-cta { text-align: center; margin-top: 8px; }
+      .hero { padding: 68px 0; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { text-align: center; }
+      .hero-copy { margin-left: auto; margin-right: auto; }
+      .button-row { justify-content: center; }
+      .portrait-card { justify-self: center; }
+      .section-head { margin-bottom: 32px; }
+      section { padding: 68px 0; }
+      .projects-grid, .education-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .facts { grid-template-columns: 1fr; }
+      .cert-list { columns: 1; }
+      .project-actions a { flex: 1 1 auto; }
+      .portrait-card { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">LORENZ<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Expertise</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#education">Education</a></li>
+<li>
+  <a href="documents/Lorenz_Pacsa_Resume.pdf"
+     target="_blank"
+     rel="noopener">
+     Resume
+  </a>
+</li>
+        <li><a class="nav-cta" href="#contact">Let's Connect</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Executive Assistant · Administrative Support</p>
+          <h1>Thoughtful support.<br><span>Seamless operations.</span></h1>
+          <p class="hero-copy">
+            Hello, I'm Lorenz Serio Pacsa. I help busy professionals stay organized through dependable
+            executive assistance, clear communication, and detail-oriented administrative support.
+          </p>
+          <div class="button-row">
+  <a class="btn btn-dark" href="#portfolio">Explore My Work <span aria-hidden="true">↗</span></a>
+
+  <a class="btn btn-light" href="documents/Lorenz_Pacsa_Resume.pdf"
+     target="_blank" rel="noopener">
+     View Resume
+  </a>
+
+  <a class="btn btn-light"
+     href="documents/Lorenz_Pacsa_Resume.pdf"
+     download>
+     Download Resume ↓
+  </a>
+</div>
+        </div>
+        <aside class="portrait-card" aria-label="Professional introduction">
+          <!-- Replace this initials placeholder with your own approved professional headshot. -->
+          <div class="portrait">
+  <img src="profile.jpg" alt="Lorenz Serio Pacsa">
+</div>
+          <h2>Lorenz Serio Pacsa</h2>
+          <p>Executive Assistant | Administrative Support | Virtual Assistant</p>
+          <div class="mini-tags">
+            <span>Organization</span><span>Communication</span><span>Reliability</span>
+          </div>
+          <p class="portrait-note">Dedicated to delivering reliable administrative support and seamless executive assistance.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">A little about me</p>
+          <h2>Professional, adaptable, and detail-oriented.</h2>
+          <p>A practical approach to supporting people, priorities, and everyday business operations.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <h3>Making busy workdays more organized.</h3>
+            <p>
+              I am an Executive Assistant with a background in administrative support, international
+              customer service, and content moderation. My experience has helped me build strong
+              communication, organization, adaptability, and problem-solving skills.
+            </p>
+            <p>
+              In my current role, I support an Australia-based business partner with calendar and inbox
+              coordination, travel arrangements, working-hours tracking, and expense administration.
+              I value discretion, consistency, and anticipating what needs attention.
+            </p>
+            <p>
+              I believe excellent support is more than completing a checklist. It is about helping
+              people protect their time, stay informed, and move important work forward.
+            </p>
+            <div class="facts">
+              <div class="fact"><strong>3</strong><span>Professional experience areas</span></div>
+              <div class="fact"><strong>6</strong><span>TESDA NC II qualifications</span></div>
+              <div class="fact"><strong>8</strong><span>Portfolio demonstrations</span></div>
+            </div>
+          </div>
+          <div class="principle">
+            <h3>My work philosophy</h3>
+            <p>
+              “Consistency, accountability, and attention to detail are the foundation of meaningful
+              professional support.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">What I can support</p>
+          <h2>Skills & areas of expertise</h2>
+          <p>Core administrative and coordination capabilities developed through professional experience.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card"><div class="skill-icon">▦</div><h3>Calendar Management</h3><p>Scheduling, meeting coordination, time-zone awareness, and appointment organization.</p></article>
+          <article class="skill-card"><div class="skill-icon">✉</div><h3>Email Coordination</h3><p>Inbox organization, professional correspondence, follow-ups, and message prioritization.</p></article>
+          <article class="skill-card"><div class="skill-icon">✈</div><h3>Travel Coordination</h3><p>Itinerary preparation, travel details, accommodation coordination, and reminders.</p></article>
+          <article class="skill-card"><div class="skill-icon">▤</div><h3>Expense Administration</h3><p>Expense documentation, receipt tracking, and organized reporting support.</p></article>
+          <article class="skill-card"><div class="skill-icon">◎</div><h3>Communication & Service</h3><p>Customer support, stakeholder coordination, clear updates, and issue resolution.</p></article>
+          <article class="skill-card"><div class="skill-icon">▣</div><h3>Administrative Support</h3><p>Documentation, task tracking, action-item follow-up, and daily operational assistance.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Career journey</p>
+          <h2>Professional experience</h2>
+          <p>Experience across executive support, customer service, and digital content operations.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-date">June 2026 – Present</span>
+            <h3>Executive Assistant at KPMG</h3>
+            <div class="timeline-company">Coforge BPS Philippines</div>
+            <p>Support an Australia-based business partner through calendar and inbox coordination, travel arrangements, working-hours tracking, and expense administration.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">August 2024 – April 2026</span>
+            <h3>Customer Service Representative / Subject Matter Expert</h3>
+            <div class="timeline-company">ibex Global</div>
+            <p>Provided international customer support, handled service-related concerns, communicated solutions, and supported team members in a Subject Matter Expert capacity.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">May 2024 – August 2024</span>
+            <h3>Content Moderator</h3>
+            <div class="timeline-company">Alorica</div>
+            <p>Reviewed digital content, applied platform policies, and contributed to online safety and content quality in a Trust & Safety environment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Selected work</p>
+          <h2>Portfolio sample projects</h2>
+          <p>Explore practical demonstrations of executive and administrative support workflows.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="images/01_01_Executive_Calendar_preview.png" alt="Preview of a fictional weekly executive calendar">
+            <div class="project-content">
+              <span class="project-number">PROJECT 01</span><h3>Executive Calendar Management</h3>
+              <p>A sample weekly executive schedule with meeting blocks, focus time, buffers, and coordination checkpoints.</p>
+              <div class="project-meta"><span>Scheduling</span><span>Time management</span><span>PDF</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/01_Executive_Calendar_Management.pdf" target="_blank" rel="noopener">View project ↗</a><a href="documents/01_Executive_Calendar_Management.pdf" download>Download PDF ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/02_02_Email_Management_preview.png" alt="Preview of a fictional inbox triage system">
+            <div class="project-content">
+              <span class="project-number">PROJECT 02</span><h3>Email Management System</h3>
+              <p>An inbox triage framework with priority labels, sample messages, response templates, and a daily review routine.</p>
+              <div class="project-meta"><span>Inbox triage</span><span>Correspondence</span><span>PDF</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/02_Email_Management_System.pdf" target="_blank" rel="noopener">View project ↗</a><a href="documents/02_Email_Management_System.pdf" download>Download PDF ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/03_03_Business_Travel_preview.png" alt="Preview of a fictional Sydney business travel itinerary">
+            <div class="project-content">
+              <span class="project-number">PROJECT 03</span><h3>Business Travel Itinerary</h3>
+              <p>A three-day sample business trip plan covering flights, accommodation, ground transport, meetings, and pre-travel checks.</p>
+              <div class="project-meta"><span>Travel planning</span><span>Logistics</span><span>PDF</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/03_Business_Travel_Itinerary.pdf" target="_blank" rel="noopener">View project ↗</a><a href="documents/03_Business_Travel_Itinerary.pdf" download>Download PDF ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/04_04_Expense_Tracker_preview.png" alt="Preview of a fictional expense tracking dashboard">
+            <div class="project-content">
+              <span class="project-number">PROJECT 04</span><h3>Expense Tracker Dashboard</h3>
+              <p>An expense log and summary workbook with sample transactions, categories, approval statuses, and a chart.</p>
+              <div class="project-meta"><span>Excel</span><span>Expense tracking</span><span>PDF guide</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/04_Expense_Tracker_Guide.pdf" target="_blank" rel="noopener">View guide ↗</a><a href="spreadsheets/04_Expense_Tracker_Dashboard.xlsx" download>Download Excel ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/05_05_Meeting_Minutes_preview.png" alt="Preview of fictional Project Northstar meeting minutes">
+            <div class="project-content">
+              <span class="project-number">PROJECT 05</span><h3>Meeting Minutes & Action Register</h3>
+              <p>A steering committee record with attendees, agenda discussion, decisions, owners, deadlines, and next steps.</p>
+              <div class="project-meta"><span>Documentation</span><span>Action tracking</span><span>PDF</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/05_Meeting_Minutes_Template.pdf" target="_blank" rel="noopener">View project ↗</a><a href="documents/05_Meeting_Minutes_Template.pdf" download>Download PDF ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/06_06_Task_Tracker_preview.png" alt="Preview of a fictional administrative task tracker">
+            <div class="project-content">
+              <span class="project-number">PROJECT 06</span><h3>Administrative Task Tracker</h3>
+              <p>A task management workbook with owners, due dates, priorities, statuses, filters, and a status dashboard.</p>
+              <div class="project-meta"><span>Excel</span><span>Task tracking</span><span>PDF guide</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/06_Administrative_Task_Tracker_Guide.pdf" target="_blank" rel="noopener">View guide ↗</a><a href="spreadsheets/06_Administrative_Task_Tracker.xlsx" download>Download Excel ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/07_07_Weekly_Report_preview.png" alt="Preview of a fictional executive weekly report">
+            <div class="project-content">
+              <span class="project-number">PROJECT 07</span><h3>Executive Weekly Report</h3>
+              <p>A concise management brief showing status updates, accomplishments, upcoming priorities, risks, and a decision request.</p>
+              <div class="project-meta"><span>Reporting</span><span>Executive updates</span><span>PDF</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/07_Executive_Weekly_Report.pdf" target="_blank" rel="noopener">View project ↗</a><a href="documents/07_Executive_Weekly_Report.pdf" download>Download PDF ↓</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/08_08_SOP_preview.png" alt="Preview of a fictional standard operating procedure">
+            <div class="project-content">
+              <span class="project-number">PROJECT 08</span><h3>Standard Operating Procedure</h3>
+              <p>A step-by-step meeting coordination process with roles, quality checks, service standards, and records controls.</p>
+              <div class="project-meta"><span>Process documentation</span><span>Workflow</span><span>PDF</span></div>
+              <div class="project-actions"><a class="primary-link" href="documents/08_SOP_Executive_Meeting_Coordination.pdf" target="_blank" rel="noopener">View project ↗</a><a href="documents/08_SOP_Executive_Meeting_Coordination.pdf" download>Download PDF ↓</a></div>
+            </div>
+          </article>
+        </div>
+        <div class="disclaimer">
+          <strong>Portfolio integrity note:</strong> These are self-created demonstration projects using fictional names, dates, transactions, and business scenarios. They are not actual client deliverables or confidential employer work.
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">My digital toolkit</p>
+          <h2>Tools & technology</h2>
+          <p>Platforms and applications I am familiar with and use in administrative workflows.</p>
+        </div>
+        <div class="tools">
+          <span class="tool">Microsoft 365</span><span class="tool">Google Sheets</span>
+          <span class="tool">Google Workspace</span><span class="tool">GitHub</span>
+          <span class="tool">Canva</span><span class="tool">WhatsApp</span><span class="tool">Telegram</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="education">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Learning & development</p>
+          <h2>Education & certifications</h2>
+          <p>Academic foundation and technical-vocational qualifications.</p>
+        </div>
+        <div class="education-grid">
+<article class="education-card">
+  <h3>Bernardo College, Las Piñas</h3>
+  <p>Bachelor of Science in Hospitality Management</p>
+  <p>2023 – 2025</p>
+  <p>3rd Year Undergraduate</p>
+</article>
+          <article class="education-card">
+            <h3>Vigo National High School</h3>
+            <p>Senior High School Graduate · 2023</p>
+            <p>Graduated with Honors · General Weighted Average: 91% · Good Conduct Award</p>
+          </article>
+          <article class="education-card">
+            <h3>TESDA National Certificates II</h3>
+            <p>Technical and vocational qualifications</p>
+            <ul class="cert-list">
+              <li>Cookery</li><li>Food and Beverage Services</li><li>Front Office Services</li>
+              <li>Bartending</li><li>Housekeeping</li><li>Bread and Pastry Production</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Start a conversation</p>
+          <h2>Let's work together.</h2>
+          <p>Interested in discussing an Executive Assistant, Virtual Assistant, or administrative support opportunity? I would be glad to connect.</p>
+        </div>
+        <div class="contact-details">
+          <!-- IMPORTANT: Replace the placeholder email and LinkedIn URL before publishing. -->
+          <a href="mailto:lorenzpacsa6@gmail.com?subject=Portfolio%20Inquiry">Email Lorenz</a>
+          <a href="https://www.linkedin.com/in/lorenz-pacsa-a74433390/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+        </div>
+        <p class="contact-hint">Feel free to reach out for collaborations, career opportunities, or professional networking.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Lorenz Serio Pacsa · Professional Portfolio · Built with purpose and professionalism.</div>
+  </footer>
+
+  <a class="back-top" id="backTop" href="#home" aria-label="Back to top">↑</a>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      menuToggle.textContent = open ? "×" : "☰";
+    });
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const backTop = document.getElementById("backTop");
+    window.addEventListener("scroll", () => {
+      backTop.classList.toggle("visible", window.scrollY > 500);
+    });
+  </script>
+</body>
+</html>
